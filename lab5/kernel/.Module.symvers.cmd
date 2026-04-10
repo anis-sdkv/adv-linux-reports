@@ -1,0 +1,1 @@
+savedcmd_/home/anis/int_stack/lab5/kernel/Module.symvers :=  scripts/mod/modpost -M -m       -o /home/anis/int_stack/lab5/kernel/Module.symvers -n -T /home/anis/int_stack/lab5/kernel/modules.order -i Module.symvers -e 

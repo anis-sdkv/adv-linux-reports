@@ -1,0 +1,1 @@
+savedcmd_/home/anis/int_stack/lab4/kernel/int_stack.ko := x86_64-linux-gnu-ld -r -m elf_x86_64 -z noexecstack --no-warn-rwx-segments --build-id=sha1  -T arch/x86/module.lds -o /home/anis/int_stack/lab4/kernel/int_stack.ko /home/anis/int_stack/lab4/kernel/int_stack.o /home/anis/int_stack/lab4/kernel/int_stack.mod.o /home/anis/int_stack/lab4/kernel/.module-common.o

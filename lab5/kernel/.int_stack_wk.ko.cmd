@@ -1,0 +1,1 @@
+savedcmd_/home/anis/int_stack/lab5/kernel/int_stack_wk.ko := x86_64-linux-gnu-ld -r -m elf_x86_64 -z noexecstack --no-warn-rwx-segments --build-id=sha1  -T arch/x86/module.lds -o /home/anis/int_stack/lab5/kernel/int_stack_wk.ko /home/anis/int_stack/lab5/kernel/int_stack_wk.o /home/anis/int_stack/lab5/kernel/int_stack_wk.mod.o /home/anis/int_stack/lab5/kernel/.module-common.o

@@ -1,0 +1,41 @@
+CompileFlags:
+  Compiler: clang
+  Add:
+    - -nostdinc
+    - -isystem/usr/lib/llvm-19/lib/clang/19/include
+    # arch-specific headers (config/, generated/)
+    - -I/lib/modules/6.12.74+deb13+1-amd64/build/include
+    - -I/lib/modules/6.12.74+deb13+1-amd64/build/include/generated
+    # common kernel headers (linux/, asm-generic/, net/, ...)
+    - -I/usr/src/linux-headers-6.12.74+deb13+1-common/include
+    # x86 arch headers
+    - -I/lib/modules/6.12.74+deb13+1-amd64/build/arch/x86/include
+    - -I/lib/modules/6.12.74+deb13+1-amd64/build/arch/x86/include/generated
+    # uapi arch headers (нужно для asm/errno.h → ENOMEM и т.д.)
+    - -I/lib/modules/6.12.74+deb13+1-amd64/build/arch/x86/include/generated/uapi
+    - -I/usr/src/linux-headers-6.12.74+deb13+1-common/include/uapi
+    # force-include before any source file
+    - -include
+    - linux/kconfig.h
+    - -include
+    - linux/compiler_types.h
+    - -D__KERNEL__
+    - -DMODULE
+    - -DCC_USING_FENTRY
+    - -DKBUILD_MODNAME="driver"
+    - -x
+    - c
+  Remove:
+    # gcc-specific flags that clangd doesn't understand
+    - -mpreferred-stack-boundary=*
+    - -mindirect-branch*
+    - -fno-allow-store-data-races
+    - -mrecord-mcount
+    - -fconserve-stack
+
+Diagnostics:
+  Suppress:
+    - pp_including_mainfile_in_preamble
+
+Index:
+  Background: Build

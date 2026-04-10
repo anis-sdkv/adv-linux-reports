@@ -1,0 +1,1 @@
+savedcmd_/home/anis/int_stack/lab5/kernel/int_stack_wk.mod := printf '%s\n'   int_stack_wk.o | awk '!x[$$0]++ { print("/home/anis/int_stack/lab5/kernel/"$$0) }' > /home/anis/int_stack/lab5/kernel/int_stack_wk.mod
